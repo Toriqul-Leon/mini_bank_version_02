@@ -1,43 +1,37 @@
 function getInputValue(inputId) {
-  const depositInput = document.getElementById(inputId);
-  const depositAmount = depositInput.value;
-  const newDepositAmount = parseFloat(depositAmount);
+  const inputField = document.getElementById(inputId);
+  const inputAmountText = inputField.value;
+  const amountValue = parseFloat(inputAmountText);
   //   !Clear Input Field
-  depositInput.value = "";
-  return newDepositAmount;
+  inputField.value = "";
+  return amountValue;
+}
+
+function updateTotalField(newDepositAmount) {
+  //   !Get and update current deposit
+  const depositTotal = document.getElementById("deposit-total");
+  const depositTotalText = depositTotal.innerText;
+  const newDepositTotal = parseFloat(depositTotalText);
+  depositTotal.innerText = newDepositAmount + newDepositTotal;
 }
 
 const depositButton = document.getElementById("deposit-button");
 
 depositButton.addEventListener("click", function () {
-  //   const depositInput = document.getElementById("deposit-input");
-  //   const depositAmount = depositInput.value;
-  //   const newDepositAmount = parseFloat(depositAmount);
-
-  const depositAmount = getInputValue("deposit-input");
-  //   !Get current deposit
-  const depositTotal = document.getElementById("deposit-total");
-  const depositTotalText = depositTotal.innerText;
-  depositTotal.innerText = depositAmount;
-  const newDepositTotal = parseFloat(depositTotalText);
-  const newTotalDeposit = newDepositAmount + newDepositTotal;
-  depositTotal.innerText = newTotalDeposit;
-
+  const newDepositAmount = getInputValue("deposit-input");
+  //   !Get and update current deposit
+  updateTotalField(newDepositAmount);
   //   !Add Balance
   const balanceAmount = document.getElementById("balance-total");
   balanceAmountText = balanceAmount.innerText;
   const previousBalanceAmount = parseFloat(balanceAmountText);
-  const newBalanceAmount = previousBalanceAmount + newTotalDeposit;
-  balanceAmount.innerText = newBalanceAmount;
+  balanceAmount.innerText = previousBalanceAmount + newDepositAmount;
 });
 
 // !Handle Withdraw
 const withdrawButton = document.getElementById("withdraw-button");
 
 withdrawButton.addEventListener("click", function () {
-  //   const withdrawInput = document.getElementById("withdraw-input");
-  //   const withdrawAmountText = withdrawInput.value;
-  //   const newWithdrawInput = parseFloat(withdrawAmountText);
   const newWithdrawInput = getInputValue("withdraw-input");
   //   !Update withdraw Total
   const withdrawTotal = document.getElementById("withdraw-total");
