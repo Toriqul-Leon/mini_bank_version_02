@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- !CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bank</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-5xl font-semibold text-center mt-16">
+        Mini <span class="text-blue-700">Bank</span>
+      </h1>
+    </header>
+    <main>
+      <section class="bg-sky-700 w-2/4 mx-auto mt-8 p-8">
+        <h3 class="text-2xl mb-4 font-bold text-center">Please Log In</h3>
+        <div class="flex align-middle justify-center">
+          <div>
+            <input
+              id="user-mail"
+              class="border-2 border-gray-700 block w-96 text-center mb-4 px-4 py-2 text-xl"
+              type="text"
+              placeholder="Enter Your Mail"
+            />
+            <input
+              id="user-password"
+              class="border-2 border-gray-700 block w-96 px-4 py-2 text-center text-xl"
+              type="password"
+              placeholder="Password"
+            />
+            <button
+              id="login-submit"
+              class="bg-slate-200 rounded inline-block align-middle my-4 px-4 py-2 text-xl font-medium"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- !JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
